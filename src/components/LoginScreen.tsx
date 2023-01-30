@@ -1,5 +1,6 @@
 import { useSession, signIn } from "next-auth/react";
 import { Button } from "./Button";
+import Image from "next/image";
 
 const discord = (
     <svg className="mr-2 ml-2 h-5 w-6 fill-slate-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36">
@@ -23,14 +24,21 @@ export function LoginScreen({ children }: { children: React.ReactNode }) {
     } else {
         return (
             <div className="flex h-screen">
-                <div className="container m-auto max-w-lg px-4 text-center ">
-                    <div className="rounded bg-gray-200 p-10 pt-5 dark:bg-gray-800">
+                <div className="container m-auto max-w-lg px-4 text-center">
+                    <main className="rounded bg-gray-200 p-10 pt-5 dark:bg-gray-800">
+                        <Image
+                            className="m-auto"
+                            src="/images/dnd-logos/dnd-acronym-logo-fullsize.png"
+                            width={256}
+                            height={256}
+                            alt="D&D acronym logo"
+                        />
                         <h1 className="p-4 text-3xl lg:text-4xl">Greetings, traveler!</h1>
                         <p className="mt-1 mb-4">Login, if you dare.</p>
                         <Button intent={"primary"} fullWidth onClick={() => void signIn("discord")}>
                             {`Sign in with Discord`} {discord}
                         </Button>
-                    </div>
+                    </main>
                 </div>
             </div>
         );
