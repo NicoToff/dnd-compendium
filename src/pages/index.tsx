@@ -1,22 +1,26 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { Typography } from "@components/Typography";
+import { useQuery } from "@tanstack/react-query";
 
 const Home: NextPage = () => {
-    return (
-        <>
-            <Head>
-                <title>D&D Snogard Compendium</title>
-                <meta name="description" content="A D&D compendium for the Snogard folks." />
-            </Head>
-            <main>
-                <Typography intent={"titleMain"}>Chapter 1: Making a website</Typography>
-                <Typography intent={"titleSecondary"}>Racial Traits</Typography>
-                <Typography intent={"titleTertiary"}>Ability Score Increase</Typography>
-                <Typography>{`Every race increases one or more of a character's ability scores.`}</Typography>
-            </main>
-        </>
-    );
+  const { data, isLoading } = useQuery(["react-query"], () =>
+    fetch("https://www.dnd5eapi.co/api/spells/?level=0").then((d) => d.json())
+  );
+  if (isLoading) return <div>Loading...</div>;
+  if (data) {
+    console.log(data);
+  }
+
+  return (
+    <>
+      <Head>
+        <title>D&D Snogard Compendium</title>
+        <meta name="description" content="A D&D compendium for the Snogard folks." />
+      </Head>
+      <main>Test</main>
+    </>
+  );
 };
 
 export default Home;
