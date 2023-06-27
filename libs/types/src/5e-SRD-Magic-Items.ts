@@ -1,12 +1,12 @@
 export type The5ESRDMagicItems = {
-    index:             string;
-    name:              string;
-    equipmentCategory: EquipmentCategory;
-    rarity:            Rarity;
-    variants:          EquipmentCategory[];
-    variant:           boolean;
-    desc:              string[];
-    url:               string;
+    index:              string;
+    name:               string;
+    equipment_category: EquipmentCategory;
+    rarity:             Rarity;
+    variants:           EquipmentCategory[];
+    variant:            boolean;
+    desc:               string[];
+    url:                string;
 }
 
 export type EquipmentCategory = {

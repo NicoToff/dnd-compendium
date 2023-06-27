@@ -1,25 +1,25 @@
 export type The5ESRDClasses = {
-    index:                    string;
-    name:                     string;
-    hitDie:                   number;
-    proficiencyChoices:       ProficiencyChoice[];
-    proficiencies:            Proficiency[];
-    savingThrows:             Proficiency[];
-    startingEquipment:        StartingEquipment[];
-    startingEquipmentOptions: StartingEquipmentOption[];
-    classLevels:              string;
-    multiClassing:            MultiClassing;
-    subclasses:               Proficiency[];
-    url:                      string;
-    spellcasting?:            Spellcasting;
-    spells?:                  string;
+    index:                      string;
+    name:                       string;
+    hit_die:                    number;
+    proficiency_choices:        ProficiencyChoice[];
+    proficiencies:              Proficiency[];
+    saving_throws:              Proficiency[];
+    starting_equipment:         StartingEquipment[];
+    starting_equipment_options: StartingEquipmentOption[];
+    class_levels:               string;
+    multi_classing:             MultiClassing;
+    subclasses:                 Proficiency[];
+    url:                        string;
+    spellcasting?:              Spellcasting;
+    spells?:                    string;
 }
 
 export type MultiClassing = {
-    prerequisites?:       MultiClassingPrerequisite[];
-    proficiencies:        Proficiency[];
-    proficiencyChoices?:  ProficiencyChoiceElement[];
-    prerequisiteOptions?: PrerequisiteOptions;
+    prerequisites?:        MultiClassingPrerequisite[];
+    proficiencies:         Proficiency[];
+    proficiency_choices?:  ProficiencyChoiceElement[];
+    prerequisite_options?: PrerequisiteOptions;
 }
 
 export type PrerequisiteOptions = {
@@ -29,16 +29,16 @@ export type PrerequisiteOptions = {
 }
 
 export type PrerequisiteOptionsFrom = {
-    optionSetType: OptionSetType;
-    options:       PurpleOption[];
+    option_set_type: OptionSetType;
+    options:         PurpleOption[];
 }
 
 export type OptionSetType = "options_array" | "equipment_category";
 
 export type PurpleOption = {
-    optionType:   string;
-    abilityScore: Proficiency;
-    minimumScore: number;
+    option_type:   string;
+    ability_score: Proficiency;
+    minimum_score: number;
 }
 
 export type Proficiency = {
@@ -48,8 +48,8 @@ export type Proficiency = {
 }
 
 export type MultiClassingPrerequisite = {
-    abilityScore: Proficiency;
-    minimumScore: number;
+    ability_score: Proficiency;
+    minimum_score: number;
 }
 
 export type ProficiencyChoiceElement = {
@@ -60,13 +60,13 @@ export type ProficiencyChoiceElement = {
 }
 
 export type PurpleFrom = {
-    optionSetType: OptionSetType;
-    options:       FluffyOption[];
+    option_set_type: OptionSetType;
+    options:         FluffyOption[];
 }
 
 export type FluffyOption = {
-    optionType: PurpleOptionType;
-    item:       Proficiency;
+    option_type: PurpleOptionType;
+    item:        Proficiency;
 }
 
 export type PurpleOptionType = "reference" | "choice";
@@ -81,20 +81,20 @@ export type ProficiencyChoice = {
 }
 
 export type FluffyFrom = {
-    optionSetType: OptionSetType;
-    options:       TentacledOption[];
+    option_set_type: OptionSetType;
+    options:         TentacledOption[];
 }
 
 export type TentacledOption = {
-    optionType: PurpleOptionType;
-    item?:      Proficiency;
-    choice?:    ProficiencyChoiceElement;
+    option_type: PurpleOptionType;
+    item?:       Proficiency;
+    choice?:     ProficiencyChoiceElement;
 }
 
 export type Spellcasting = {
-    level:               number;
-    spellcastingAbility: Proficiency;
-    info:                Info[];
+    level:                number;
+    spellcasting_ability: Proficiency;
+    info:                 Info[];
 }
 
 export type Info = {
@@ -115,13 +115,13 @@ export type StartingEquipmentOption = {
 }
 
 export type StartingEquipmentOptionFrom = {
-    optionSetType:      OptionSetType;
-    options?:           StickyOption[];
-    equipmentCategory?: Proficiency;
+    option_set_type:     OptionSetType;
+    options?:            StickyOption[];
+    equipment_category?: Proficiency;
 }
 
 export type StickyOption = {
-    optionType:     ItemOptionType;
+    option_type:    ItemOptionType;
     count?:         number;
     of?:            Proficiency;
     choice?:        ItemChoice;
@@ -137,17 +137,17 @@ export type ItemChoice = {
 }
 
 export type TentacledFrom = {
-    optionSetType:     OptionSetType;
-    equipmentCategory: Proficiency;
+    option_set_type:    OptionSetType;
+    equipment_category: Proficiency;
 }
 
 export type StartingEquipmentOptionType = "equipment";
 
 export type Item = {
-    optionType: ItemOptionType;
-    count?:     number;
-    of?:        Proficiency;
-    choice?:    ItemChoice;
+    option_type: ItemOptionType;
+    count?:      number;
+    of?:         Proficiency;
+    choice?:     ItemChoice;
 }
 
 export type ItemOptionType = "counted_reference" | "choice" | "multiple";

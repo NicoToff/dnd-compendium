@@ -1,37 +1,37 @@
 export type The5ESRDEquipment = {
-    index:                string;
-    name:                 string;
-    equipmentCategory:    EquipmentCategory;
-    weaponCategory?:      WeaponCategory;
-    weaponRange?:         WeaponRange;
-    categoryRange?:       CategoryRange;
-    cost:                 Cost;
-    damage?:              Damage;
-    range?:               Range;
-    weight?:              number;
-    properties?:          EquipmentCategory[];
-    url:                  string;
-    throwRange?:          Range;
-    twoHandedDamage?:     Damage;
-    special?:             string[];
-    armorCategory?:       string;
-    armorClass?:          ArmorClass;
-    strMinimum?:          number;
-    stealthDisadvantage?: boolean;
-    gearCategory?:        EquipmentCategory;
-    desc?:                string[];
-    quantity?:            number;
-    contents?:            Content[];
-    toolCategory?:        ToolCategory;
-    vehicleCategory?:     VehicleCategory;
-    speed?:               Cost;
-    capacity?:            string;
+    index:                 string;
+    name:                  string;
+    equipment_category:    EquipmentCategory;
+    weapon_category?:      WeaponCategory;
+    weapon_range?:         WeaponRange;
+    category_range?:       CategoryRange;
+    cost:                  Cost;
+    damage?:               Damage;
+    range?:                Range;
+    weight?:               number;
+    properties?:           EquipmentCategory[];
+    url:                   string;
+    throw_range?:          Range;
+    two_handed_damage?:    Damage;
+    special?:              string[];
+    armor_category?:       string;
+    armor_class?:          ArmorClass;
+    str_minimum?:          number;
+    stealth_disadvantage?: boolean;
+    gear_category?:        EquipmentCategory;
+    desc?:                 string[];
+    quantity?:             number;
+    contents?:             Content[];
+    tool_category?:        ToolCategory;
+    vehicle_category?:     VehicleCategory;
+    speed?:                Cost;
+    capacity?:             string;
 }
 
 export type ArmorClass = {
-    base:      number;
-    dexBonus:  boolean;
-    maxBonus?: number;
+    base:       number;
+    dex_bonus:  boolean;
+    max_bonus?: number;
 }
 
 export type CategoryRange = "Simple Melee" | "Simple Ranged" | "Martial Melee" | "Martial Ranged";
@@ -55,8 +55,8 @@ export type Cost = {
 export type Unit = "sp" | "gp" | "cp" | "ft/round" | "mph";
 
 export type Damage = {
-    damageDice: string;
-    damageType: EquipmentCategory;
+    damage_dice: string;
+    damage_type: EquipmentCategory;
 }
 
 export type Range = {

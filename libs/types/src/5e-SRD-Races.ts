@@ -1,21 +1,21 @@
 export type The5ESRDRaces = {
-    index:                       string;
-    name:                        string;
-    speed:                       number;
-    abilityBonuses:              AbilityBonus[];
-    alignment:                   string;
-    age:                         string;
-    size:                        string;
-    sizeDescription:             string;
-    startingProficiencies:       Language[];
-    startingProficiencyOptions?: Options;
-    languages:                   Language[];
-    languageDesc:                string;
-    traits:                      Language[];
-    subraces:                    Language[];
-    url:                         string;
-    languageOptions?:            Options;
-    abilityBonusOptions?:        AbilityBonusOptions;
+    index:                         string;
+    name:                          string;
+    speed:                         number;
+    ability_bonuses:               AbilityBonus[];
+    alignment:                     string;
+    age:                           string;
+    size:                          string;
+    size_description:              string;
+    starting_proficiencies:        Language[];
+    starting_proficiency_options?: Options;
+    languages:                     Language[];
+    language_desc:                 string;
+    traits:                        Language[];
+    subraces:                      Language[];
+    url:                           string;
+    language_options?:             Options;
+    ability_bonus_options?:        AbilityBonusOptions;
 }
 
 export type AbilityBonusOptions = {
@@ -25,14 +25,14 @@ export type AbilityBonusOptions = {
 }
 
 export type AbilityBonusOptionsFrom = {
-    optionSetType: string;
-    options:       PurpleOption[];
+    option_set_type: string;
+    options:         PurpleOption[];
 }
 
 export type PurpleOption = {
-    optionType:   string;
-    abilityScore: Language;
-    bonus:        number;
+    option_type:   string;
+    ability_score: Language;
+    bonus:         number;
 }
 
 export type Language = {
@@ -42,8 +42,8 @@ export type Language = {
 }
 
 export type AbilityBonus = {
-    abilityScore: Language;
-    bonus:        number;
+    ability_score: Language;
+    bonus:         number;
 }
 
 export type Options = {
@@ -54,13 +54,13 @@ export type Options = {
 }
 
 export type LanguageOptionsFrom = {
-    optionSetType: string;
-    options:       FluffyOption[];
+    option_set_type: string;
+    options:         FluffyOption[];
 }
 
 export type FluffyOption = {
-    optionType: OptionType;
-    item:       Language;
+    option_type: OptionType;
+    item:        Language;
 }
 
 export type OptionType = "reference";

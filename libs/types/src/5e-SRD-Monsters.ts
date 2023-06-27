@@ -1,53 +1,53 @@
 export type The5ESRDMonsters = {
-    index:                 string;
-    name:                  string;
-    size:                  Size;
-    type:                  The5ESRDMonsterType;
-    alignment:             Alignment;
-    armorClass:            ArmorClass[];
-    hitPoints:             number;
-    hitDice:               string;
-    hitPointsRoll:         string;
-    speed:                 Speed;
-    strength:              number;
-    dexterity:             number;
-    constitution:          number;
-    intelligence:          number;
-    wisdom:                number;
-    charisma:              number;
-    proficiencies:         Proficiency[];
-    damageVulnerabilities: string[];
-    damageResistances:     string[];
-    damageImmunities:      string[];
-    conditionImmunities:   ConditionImmunity[];
-    senses:                Senses;
-    languages:             string;
-    challengeRating:       number;
-    xp:                    number;
-    specialAbilities?:     SpecialAbility[];
-    actions?:              The5ESRDMonsterAction[];
-    legendaryActions?:     LegendaryAction[];
-    image?:                string;
-    url:                   string;
-    desc?:                 string;
-    subtype?:              string;
-    reactions?:            Reaction[];
-    images?:               string;
-    forms?:                ConditionImmunity[];
+    index:                  string;
+    name:                   string;
+    size:                   Size;
+    type:                   The5ESRDMonsterType;
+    alignment:              Alignment;
+    armor_class:            ArmorClass[];
+    hit_points:             number;
+    hit_dice:               string;
+    hit_points_roll:        string;
+    speed:                  Speed;
+    strength:               number;
+    dexterity:              number;
+    constitution:           number;
+    intelligence:           number;
+    wisdom:                 number;
+    charisma:               number;
+    proficiencies:          Proficiency[];
+    damage_vulnerabilities: string[];
+    damage_resistances:     string[];
+    damage_immunities:      string[];
+    condition_immunities:   ConditionImmunity[];
+    senses:                 Senses;
+    languages:              string;
+    challenge_rating:       number;
+    xp:                     number;
+    special_abilities?:     SpecialAbility[];
+    actions?:               The5ESRDMonsterAction[];
+    legendary_actions?:     LegendaryAction[];
+    image?:                 string;
+    url:                    string;
+    desc?:                  string;
+    subtype?:               string;
+    reactions?:             Reaction[];
+    images?:                string;
+    forms?:                 ConditionImmunity[];
 }
 
 export type The5ESRDMonsterAction = {
-    name:             string;
-    multiattackType?: MultiattackType;
-    desc:             string;
-    actions?:         ActionAction[];
-    attackBonus?:     number;
-    dc?:              Dc;
-    damage?:          ActionDamage[];
-    usage?:           ActionUsage;
-    options?:         Options;
-    attacks?:         Attack[];
-    actionOptions?:   ActionOptions;
+    name:              string;
+    multiattack_type?: MultiattackType;
+    desc:              string;
+    actions?:          ActionAction[];
+    attack_bonus?:     number;
+    dc?:               Dc;
+    damage?:           ActionDamage[];
+    usage?:            ActionUsage;
+    options?:          Options;
+    attacks?:          Attack[];
+    action_options?:   ActionOptions;
 }
 
 export type ActionOptions = {
@@ -57,19 +57,19 @@ export type ActionOptions = {
 }
 
 export type ActionOptionsFrom = {
-    optionSetType: OptionSetType;
-    options:       ItemElement[];
+    option_set_type: OptionSetType;
+    options:         ItemElement[];
 }
 
 export type OptionSetType = "options_array";
 
 export type ItemElement = {
-    optionType:  ItemOptionType;
-    items?:      ItemElement[];
-    actionName?: string;
-    count?:      number;
-    type?:       ActionType;
-    desc?:       string;
+    option_type:  ItemOptionType;
+    items?:       ItemElement[];
+    action_name?: string;
+    count?:       number;
+    type?:        ActionType;
+    desc?:        string;
 }
 
 export type ItemOptionType = "multiple" | "action";
@@ -77,21 +77,21 @@ export type ItemOptionType = "multiple" | "action";
 export type ActionType = "ranged" | "melee" | "ability" | "magic";
 
 export type ActionAction = {
-    actionName: string;
-    count:      number | string;
-    type:       ActionType;
+    action_name: string;
+    count:       number | string;
+    type:        ActionType;
 }
 
 export type Attack = {
-    name:        string;
-    dc:          Dc;
-    damage?:     AttackDamage[];
-    optionType?: OptionType;
+    name:         string;
+    dc:           Dc;
+    damage?:      AttackDamage[];
+    option_type?: OptionType;
 }
 
 export type AttackDamage = {
-    damageType: ConditionImmunity;
-    damageDice: string;
+    damage_type: ConditionImmunity;
+    damage_dice: string;
 }
 
 export type ConditionImmunity = {
@@ -101,9 +101,9 @@ export type ConditionImmunity = {
 }
 
 export type Dc = {
-    dcType:      ConditionImmunity;
-    dcValue:     number;
-    successType: SuccessType;
+    dc_type:      ConditionImmunity;
+    dc_value:     number;
+    success_type: SuccessType;
 }
 
 export type SuccessType = "none" | "half";
@@ -111,24 +111,24 @@ export type SuccessType = "none" | "half";
 export type OptionType = "breath";
 
 export type ActionDamage = {
-    damageType?: ConditionImmunity;
-    damageDice?: string;
-    dc?:         Dc;
-    choose?:     number;
-    type?:       DamageType;
-    from?:       DamageFrom;
+    damage_type?: ConditionImmunity;
+    damage_dice?: string;
+    dc?:          Dc;
+    choose?:      number;
+    type?:        DamageType;
+    from?:        DamageFrom;
 }
 
 export type DamageFrom = {
-    optionSetType: OptionSetType;
-    options:       PurpleOption[];
+    option_set_type: OptionSetType;
+    options:         PurpleOption[];
 }
 
 export type PurpleOption = {
-    optionType: DamageType;
-    damageType: ConditionImmunity;
-    damageDice: string;
-    notes?:     Notes;
+    option_type: DamageType;
+    damage_type: ConditionImmunity;
+    damage_dice: string;
+    notes?:      Notes;
 }
 
 export type Notes = "One handed" | "Two handed" | "With shillelagh";
@@ -144,18 +144,18 @@ export type Options = {
 }
 
 export type OptionsFrom = {
-    optionSetType: OptionSetType;
-    options:       Attack[];
+    option_set_type: OptionSetType;
+    options:         Attack[];
 }
 
 export type OptionsType = "attack";
 
 export type ActionUsage = {
-    type:       PurpleType;
-    times?:     number;
-    dice?:      Dice;
-    minValue?:  number;
-    restTypes?: RESTType[];
+    type:        PurpleType;
+    times?:      number;
+    dice?:       Dice;
+    min_value?:  number;
+    rest_types?: RESTType[];
 }
 
 export type Dice = "1d6";
@@ -178,11 +178,11 @@ export type ArmorClass = {
 export type ArmorClassType = "natural" | "dex" | "condition" | "spell" | "armor";
 
 export type LegendaryAction = {
-    name:         string;
-    desc:         string;
-    attackBonus?: number;
-    damage?:      AttackDamage[];
-    dc?:          Dc;
+    name:          string;
+    desc:          string;
+    attack_bonus?: number;
+    damage?:       AttackDamage[];
+    dc?:           Dc;
 }
 
 export type Proficiency = {
@@ -197,11 +197,11 @@ export type Reaction = {
 }
 
 export type Senses = {
-    darkvision?:       Blindsight;
-    passivePerception: number;
-    blindsight?:       Blindsight;
-    truesight?:        Blindsight;
-    tremorsense?:      Blindsight;
+    darkvision?:        Blindsight;
+    passive_perception: number;
+    blindsight?:        Blindsight;
+    truesight?:         Blindsight;
+    tremorsense?:       Blindsight;
 }
 
 export type Blindsight = "60 ft." | "60 ft. (blind beyond this radius)" | "10 ft." | "30 ft." | "30 ft. or 10 ft. while deafened (blind beyond this radius)" | "120 ft." | "30 ft. (blind beyond this radius)" | "90 ft.";
@@ -215,18 +215,18 @@ export type SpecialAbility = {
     spellcasting?: Spellcasting;
     usage?:        SpecialAbilityUsage;
     damage?:       AttackDamage[];
-    attackBonus?:  number;
+    attack_bonus?: number;
 }
 
 export type Spellcasting = {
-    level?:             number;
-    ability:            ConditionImmunity;
-    dc?:                number;
-    modifier?:          number;
-    componentsRequired: ComponentsRequired[];
-    school?:            School;
-    slots?:             { [key: string]: number };
-    spells:             Spell[];
+    level?:              number;
+    ability:             ConditionImmunity;
+    dc?:                 number;
+    modifier?:           number;
+    components_required: ComponentsRequired[];
+    school?:             School;
+    slots?:              { [key: string]: number };
+    spells:              Spell[];
 }
 
 export type ComponentsRequired = "V" | "S" | "M";
@@ -249,9 +249,9 @@ export type SpellUsage = {
 export type FluffyType = "at will" | "per day";
 
 export type SpecialAbilityUsage = {
-    type:       PurpleType;
-    times?:     number;
-    restTypes?: RESTType[];
+    type:        PurpleType;
+    times?:      number;
+    rest_types?: RESTType[];
 }
 
 export type Speed = {

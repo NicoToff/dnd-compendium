@@ -1,12 +1,12 @@
 export type The5ESRDSubclasses = {
-    index:          string;
-    class:          Class;
-    name:           string;
-    subclassFlavor: string;
-    desc:           string[];
-    subclassLevels: string;
-    url:            string;
-    spells?:        Spell[];
+    index:           string;
+    class:           Class;
+    name:            string;
+    subclass_flavor: string;
+    desc:            string[];
+    subclass_levels: string;
+    url:             string;
+    spells?:         Spell[];
 }
 
 export type Class = {

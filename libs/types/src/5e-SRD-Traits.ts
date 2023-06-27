@@ -1,15 +1,15 @@
 export type The5ESRDTraits = {
-    index:               string;
-    races:               Parent[];
-    subraces:            Parent[];
-    name:                string;
-    desc:                string[];
-    proficiencies:       Parent[];
-    url:                 string;
-    proficiencyChoices?: LanguageOptions;
-    traitSpecific?:      TraitSpecific;
-    languageOptions?:    LanguageOptions;
-    parent?:             Parent;
+    index:                string;
+    races:                Parent[];
+    subraces:             Parent[];
+    name:                 string;
+    desc:                 string[];
+    proficiencies:        Parent[];
+    url:                  string;
+    proficiency_choices?: LanguageOptions;
+    trait_specific?:      TraitSpecific;
+    language_options?:    LanguageOptions;
+    parent?:              Parent;
 }
 
 export type LanguageOptions = {
@@ -19,13 +19,13 @@ export type LanguageOptions = {
 }
 
 export type From = {
-    optionSetType: string;
-    options:       Option[];
+    option_set_type: string;
+    options:         Option[];
 }
 
 export type Option = {
-    optionType: OptionType;
-    item:       Parent;
+    option_type: OptionType;
+    item:        Parent;
 }
 
 export type Parent = {
@@ -37,19 +37,19 @@ export type Parent = {
 export type OptionType = "reference";
 
 export type TraitSpecific = {
-    spellOptions?:    LanguageOptions;
-    subtraitOptions?: LanguageOptions;
-    damageType?:      Parent;
-    breathWeapon?:    BreathWeapon;
+    spell_options?:    LanguageOptions;
+    subtrait_options?: LanguageOptions;
+    damage_type?:      Parent;
+    breath_weapon?:    BreathWeapon;
 }
 
 export type BreathWeapon = {
-    name:         Name;
-    desc:         string;
-    areaOfEffect: AreaOfEffect;
-    usage:        Usage;
-    dc:           Dc;
-    damage:       Damage[];
+    name:           Name;
+    desc:           string;
+    area_of_effect: AreaOfEffect;
+    usage:          Usage;
+    dc:             Dc;
+    damage:         Damage[];
 }
 
 export type AreaOfEffect = {
@@ -60,15 +60,15 @@ export type AreaOfEffect = {
 export type AreaOfEffectType = "line" | "cone";
 
 export type Damage = {
-    damageType:             Parent;
-    damageAtCharacterLevel: { [key: string]: DamageAtCharacterLevel };
+    damage_type:               Parent;
+    damage_at_character_level: { [key: string]: DamageAtCharacterLevel };
 }
 
 export type DamageAtCharacterLevel = "2d6" | "3d6" | "4d6" | "5d6";
 
 export type Dc = {
-    dcType:      Parent;
-    successType: SuccessType;
+    dc_type:      Parent;
+    success_type: SuccessType;
 }
 
 export type SuccessType = "half";

@@ -1,15 +1,15 @@
 export type The5ESRDFeatures = {
-    index:            string;
-    class:            Class;
-    name:             string;
-    level:            number;
-    prerequisites:    Prerequisite[];
-    desc:             string[];
-    url:              string;
-    subclass?:        Class;
-    reference?:       string;
-    featureSpecific?: FeatureSpecific;
-    parent?:          Class;
+    index:             string;
+    class:             Class;
+    name:              string;
+    level:             number;
+    prerequisites:     Prerequisite[];
+    desc:              string[];
+    url:               string;
+    subclass?:         Class;
+    reference?:        string;
+    feature_specific?: FeatureSpecific;
+    parent?:           Class;
 }
 
 export type Class = {
@@ -19,9 +19,9 @@ export type Class = {
 }
 
 export type FeatureSpecific = {
-    expertiseOptions?:  ExpertiseOptions;
-    subfeatureOptions?: SubfeatureOptions;
-    invocations?:       Class[];
+    expertise_options?:  ExpertiseOptions;
+    subfeature_options?: SubfeatureOptions;
+    invocations?:        Class[];
 }
 
 export type ExpertiseOptions = {
@@ -31,17 +31,17 @@ export type ExpertiseOptions = {
 }
 
 export type ExpertiseOptionsFrom = {
-    optionSetType: OptionSetType;
-    options:       ItemElement[];
+    option_set_type: OptionSetType;
+    options:         ItemElement[];
 }
 
 export type OptionSetType = "options_array";
 
 export type ItemElement = {
-    optionType: OptionType;
-    item?:      Class;
-    choice?:    SubfeatureOptions;
-    items?:     ItemElement[];
+    option_type: OptionType;
+    item?:       Class;
+    choice?:     SubfeatureOptions;
+    items?:      ItemElement[];
 }
 
 export type SubfeatureOptions = {
@@ -51,13 +51,13 @@ export type SubfeatureOptions = {
 }
 
 export type SubfeatureOptionsFrom = {
-    optionSetType: OptionSetType;
-    options:       PurpleOption[];
+    option_set_type: OptionSetType;
+    options:         PurpleOption[];
 }
 
 export type PurpleOption = {
-    optionType: OptionType;
-    item:       Class;
+    option_type: OptionType;
+    item:        Class;
 }
 
 export type OptionType = "reference" | "choice" | "multiple";

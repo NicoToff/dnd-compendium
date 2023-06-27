@@ -1,19 +1,19 @@
 export type The5ESRDSubraces = {
-    index:                 string;
-    name:                  string;
-    race:                  Race;
-    desc:                  string;
-    abilityBonuses:        AbilityBonus[];
-    startingProficiencies: Race[];
-    languages:             any[];
-    racialTraits:          Race[];
-    url:                   string;
-    languageOptions?:      LanguageOptions;
+    index:                  string;
+    name:                   string;
+    race:                   Race;
+    desc:                   string;
+    ability_bonuses:        AbilityBonus[];
+    starting_proficiencies: Race[];
+    languages:              any[];
+    racial_traits:          Race[];
+    url:                    string;
+    language_options?:      LanguageOptions;
 }
 
 export type AbilityBonus = {
-    abilityScore: Race;
-    bonus:        number;
+    ability_score: Race;
+    bonus:         number;
 }
 
 export type Race = {
@@ -29,13 +29,13 @@ export type LanguageOptions = {
 }
 
 export type From = {
-    optionSetType: string;
-    options:       Option[];
+    option_set_type: string;
+    options:         Option[];
 }
 
 export type Option = {
-    optionType: OptionType;
-    item:       Race;
+    option_type: OptionType;
+    item:        Race;
 }
 
 export type OptionType = "reference";

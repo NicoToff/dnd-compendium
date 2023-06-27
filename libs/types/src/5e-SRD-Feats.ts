@@ -7,8 +7,8 @@ export type The5ESRDFeats = {
 }
 
 export type Prerequisite = {
-    abilityScore: AbilityScore;
-    minimumScore: number;
+    ability_score: AbilityScore;
+    minimum_score: number;
 }
 
 export type AbilityScore = {

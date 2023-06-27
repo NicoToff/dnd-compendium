@@ -1,16 +1,16 @@
 export type The5ESRDBackgrounds = {
-    index:                    string;
-    name:                     string;
-    startingProficiencies:    StartingProficiency[];
-    languageOptions:          LanguageOptions;
-    startingEquipment:        StartingEquipment[];
-    startingEquipmentOptions: StartingEquipmentOption[];
-    feature:                  Feature;
-    personalityTraits:        Bonds;
-    ideals:                   Ideals;
-    bonds:                    Bonds;
-    flaws:                    Bonds;
-    url:                      string;
+    index:                      string;
+    name:                       string;
+    starting_proficiencies:     StartingProficiency[];
+    language_options:           LanguageOptions;
+    starting_equipment:         StartingEquipment[];
+    starting_equipment_options: StartingEquipmentOption[];
+    feature:                    Feature;
+    personality_traits:         Bonds;
+    ideals:                     Ideals;
+    bonds:                      Bonds;
+    flaws:                      Bonds;
+    url:                        string;
 }
 
 export type Bonds = {
@@ -20,13 +20,13 @@ export type Bonds = {
 }
 
 export type BondsFrom = {
-    optionSetType: string;
-    options:       PurpleOption[];
+    option_set_type: string;
+    options:         PurpleOption[];
 }
 
 export type PurpleOption = {
-    optionType: OptionType;
-    string:     string;
+    option_type: OptionType;
+    string:      string;
 }
 
 export type OptionType = "string";
@@ -43,14 +43,14 @@ export type Ideals = {
 }
 
 export type IdealsFrom = {
-    optionSetType: string;
-    options:       FluffyOption[];
+    option_set_type: string;
+    options:         FluffyOption[];
 }
 
 export type FluffyOption = {
-    optionType: string;
-    desc:       string;
-    alignments: StartingProficiency[];
+    option_type: string;
+    desc:        string;
+    alignments:  StartingProficiency[];
 }
 
 export type StartingProficiency = {
@@ -66,8 +66,8 @@ export type LanguageOptions = {
 }
 
 export type LanguageOptionsFrom = {
-    optionSetType:   string;
-    resourceListURL: string;
+    option_set_type:   string;
+    resource_list_url: string;
 }
 
 export type StartingEquipment = {
@@ -82,6 +82,6 @@ export type StartingEquipmentOption = {
 }
 
 export type StartingEquipmentOptionFrom = {
-    optionSetType:     string;
-    equipmentCategory: StartingProficiency;
+    option_set_type:    string;
+    equipment_category: StartingProficiency;
 }

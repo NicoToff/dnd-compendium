@@ -1,25 +1,25 @@
 export type The5ESRDSpells = {
-    index:            string;
-    name:             string;
-    desc:             string[];
-    higherLevel?:     string[];
-    range:            Range;
-    components:       Component[];
-    material?:        string;
-    ritual:           boolean;
-    duration:         string;
-    concentration:    boolean;
-    castingTime:      CastingTime;
-    level:            number;
-    attackType?:      AttackType;
-    damage?:          Damage;
-    school:           School;
-    classes:          School[];
-    subclasses:       School[];
-    url:              string;
-    dc?:              Dc;
-    healAtSlotLevel?: { [key: string]: string };
-    areaOfEffect?:    AreaOfEffect;
+    index:               string;
+    name:                string;
+    desc:                string[];
+    higher_level?:       string[];
+    range:               Range;
+    components:          Component[];
+    material?:           string;
+    ritual:              boolean;
+    duration:            string;
+    concentration:       boolean;
+    casting_time:        CastingTime;
+    level:               number;
+    attack_type?:        AttackType;
+    damage?:             Damage;
+    school:              School;
+    classes:             School[];
+    subclasses:          School[];
+    url:                 string;
+    dc?:                 Dc;
+    heal_at_slot_level?: { [key: string]: string };
+    area_of_effect?:     AreaOfEffect;
 }
 
 export type AreaOfEffect = {
@@ -42,15 +42,15 @@ export type School = {
 export type Component = "V" | "S" | "M";
 
 export type Damage = {
-    damageType?:             School;
-    damageAtSlotLevel?:      { [key: string]: string };
-    damageAtCharacterLevel?: { [key: string]: string };
+    damage_type?:               School;
+    damage_at_slot_level?:      { [key: string]: string };
+    damage_at_character_level?: { [key: string]: string };
 }
 
 export type Dc = {
-    dcType:    School;
-    dcSuccess: DcSuccess;
-    desc?:     string;
+    dc_type:    School;
+    dc_success: DcSuccess;
+    desc?:      string;
 }
 
 export type DcSuccess = "none" | "half" | "other";
