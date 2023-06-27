@@ -1,5 +1,5 @@
-const { execSync } = require("child_process");
-const { join } = require("path");
+import { execSync } from "child_process";
+import { join } from "path";
 
 const [path, command] = findPathAndCommand(process.argv[2]);
 
@@ -22,6 +22,7 @@ function findPathAndCommand(str) {
     case "build":   return [["apps", "webapp"], "pnpm build"];
     case "start":   return [["apps", "webapp"], "pnpm start"];
     case "install": return [["apps", "webapp"], "pnpm i"];
+    case "dev":     return [["apps", "webapp"], "pnpm dev"];
     default:        return [null, null];
   }
 }
