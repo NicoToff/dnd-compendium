@@ -41,7 +41,9 @@ def log(msg: str, pre_msg: str, pre_color: Status):
     }[pre_color]
     pre = f"{case}[" if pre_msg else ""
     suf = f"] {Style.RESET_ALL}" if pre_msg else ""
-    print(f"{pre}{pre_msg}{suf}<{datetime.now().strftime('%H:%M:%S.%f')}> {msg}")
+    print(
+        f"{pre}{pre_msg}{suf}{Fore.LIGHTBLACK_EX}<{datetime.now().strftime('%H:%M:%S.%f')}>{Style.RESET_ALL} {msg}"
+    )
 
 
 def create_type_file(json_file_path: str, type_file_path: str):
@@ -51,7 +53,6 @@ def create_type_file(json_file_path: str, type_file_path: str):
                 "quicktype.cmd",
                 json_file_path,
                 "--just-types",
-                "--nice-property-names",
                 "--prefer-unions",
                 "--prefer-types",
                 "-o",
@@ -90,6 +91,7 @@ if not getcwd().endswith("dnd-compendium"):
 
 args = sys.argv[1:]
 quiet = "-q" in args or "--quiet" in args
+force_types = "-f" in args or "--force-types" in args
 url = "https://api.github.com/repos/5e-bits/5e-database/contents/src"
 # From the root of the repo, then apps, then typesense, the api directory
 output_json_directory = path.join(getcwd(), "apps", "typesense", "api")
@@ -163,7 +165,13 @@ log(
 )
 
 output_ts_types_directory = path.join(getcwd(), "libs", "types", "src")
-if len(files_that_need_types) != 0:
+if len(files_that_need_types) != 0 or force_types:
+    if force_types:
+        all_docs = listdir(output_json_directory)
+        # join output_json_directory to all_docs
+        files_that_need_types = [
+            path.join(output_json_directory, doc) for doc in all_docs
+        ]
     log(
         f"Generating types for {len(files_that_need_types)} files...",
         "INFO",
