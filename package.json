@@ -1,8 +1,17 @@
 {
+  "type": "module",
   "scripts": {
     "build": "node scripts/commands.js build",
     "start": "node scripts/commands.js start",
     "install": "node scripts/commands.js install",
     "i": "node scripts/commands.js install"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ts-node": "^10.9.1",
+    "typesense": "^1.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.2"
   }
 }
