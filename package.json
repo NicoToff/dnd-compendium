@@ -3,6 +3,7 @@
   "scripts": {
     "build": "node scripts/commands.js build",
     "start": "node scripts/commands.js start",
+    "dev": "node scripts/commands.js dev",
     "install": "node scripts/commands.js install",
     "i": "node scripts/commands.js install"
   },
