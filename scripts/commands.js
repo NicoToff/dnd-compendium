@@ -11,7 +11,8 @@ if (!path || !command) {
 try {
   execSync(command, { cwd: join(process.cwd(), ...path), stdio: "inherit" });
 } catch (error) {
-  console.error(`Error occurred while running 'pnpm build' in webapp: ${error.message}`);
+  console.error(`An error occurred while running ${command} in ${path}.`);
+  console.error(error.message);
   process.exit(1);
 }
 
