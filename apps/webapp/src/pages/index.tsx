@@ -2,19 +2,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
 import { api } from "~/utils/api";
-import { typesenseInstantSearchClient } from "~/clients/typesense-search";
-
-import {
-  InstantSearch,
-  SortBy,
-  Pagination,
-  ClearRefinements,
-  Hits,
-  HitsPerPage, // TODO: Check https://www.algolia.com/doc/ui-libraries/autocomplete/api-reference/autocomplete-plugin-recent-searches/createLocalStorageRecentSearchesPlugin/
-  Configure,
-  SearchBox,
-} from "react-instantsearch-dom";
-
+import { SpellSearch } from "~/components/spell-search";
 export default function Home() {
   const hello = api.example.hello.useQuery({ text: "from tRPC " });
 
@@ -60,22 +48,8 @@ export default function Home() {
             </p>
             <AuthShowcase />
           </div>
+          <SpellSearch />
         </div>
-        <InstantSearch
-          indexName="5e-srd-spells"
-          searchClient={
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            typesenseInstantSearchClient
-          }
-        >
-          <Configure
-            attributesToSnippet={["desc:10"]}
-            snippetEllipsisText="…"
-            removeWordsIfNoResults="allOptional"
-          />
-          <SearchBox />
-          <Hits />
-        </InstantSearch>
       </main>
     </>
   );
